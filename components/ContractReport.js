@@ -269,14 +269,14 @@ export default function ContractReport({ report, isPaid = false }) {
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
             <button className="clay-button-primary px-6 py-3">
-              Pro Report - &#8377;199
+              Pro Report - $19.90
             </button>
             <button className="clay-button-secondary px-6 py-3">
-              Premium - &#8377;499
+              Premium - $49.90
             </button>
           </div>
           <p className="text-xs text-gray-400 mt-3">
-            One-time payment. No subscription. No refunds.
+            One-time payment. No subscription. No refunds. Price in your local currency at checkout.
           </p>
         </div>
       )}

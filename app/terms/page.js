@@ -76,9 +76,12 @@ export default function TermsPage() {
               </h2>
               <p>
                 SignSafe offers both free and paid tiers. Paid reports are
-                available as one-time purchases. Prices are displayed in Indian
-                Rupees (INR) and are subject to change without notice. Payment is
-                processed through secure third-party payment processors.
+                available as one-time purchases at $19.90 USD (Pro) and $49.90
+                USD (Premium). Prices are displayed in your local currency based
+                on your geographic location at approximate exchange rates. Final
+                charges are in USD and are subject to change without notice.
+                Payment is processed through secure third-party payment
+                processors.
               </p>
             </section>
 
