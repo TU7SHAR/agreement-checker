@@ -1,18 +1,15 @@
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Logo from "@/components/Logo";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-gray-100 bg-white/50 mt-auto">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+    <footer className="w-full border-t border-gray-100/50 bg-white/30 mt-auto">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="sm:col-span-2">
-            <div className="flex items-center gap-2 mb-3">
-              <Shield className="w-5 h-5 text-indigo-600" />
-              <span className="text-lg font-bold text-gray-900">SignSafe</span>
-            </div>
-            <p className="text-sm text-gray-500 max-w-xs">
+            <Logo size="small" />
+            <p className="text-sm text-gray-500 max-w-xs mt-4">
               Understand your contracts before you sign. AI-powered clause
               analysis in plain English.
             </p>
@@ -27,7 +24,7 @@ export default function Footer() {
             <h4 className="font-semibold text-gray-800 text-sm mb-3">
               Product
             </h4>
-            <ul className="space-y-2 text-sm text-gray-500">
+            <ul className="space-y-2.5 text-sm text-gray-500">
               <li>
                 <Link
                   href="/upload"
@@ -52,13 +49,21 @@ export default function Footer() {
                   Features
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/#faq"
+                  className="hover:text-indigo-600 transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
             <h4 className="font-semibold text-gray-800 text-sm mb-3">Legal</h4>
-            <ul className="space-y-2 text-sm text-gray-500">
+            <ul className="space-y-2.5 text-sm text-gray-500">
               <li>
                 <Link
                   href="/terms"
@@ -79,9 +84,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-100 text-center">
+        <div className="mt-10 pt-6 border-t border-gray-100/50 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs text-gray-400">
             &copy; {new Date().getFullYear()} SignSafe. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-400">
+            Prices shown in your local currency. Base price USD.
           </p>
         </div>
       </div>
