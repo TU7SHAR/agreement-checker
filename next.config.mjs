@@ -8,7 +8,9 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
 
   // Turbopack configuration (Next.js 16 default bundler)
-  turbopack: {},
+  turbopack: {
+    root: process.cwd(),
+  },
 
   // Server external packages for pdf-parse and mammoth
   serverExternalPackages: ["pdf-parse", "mammoth"],
