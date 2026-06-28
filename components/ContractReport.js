@@ -83,6 +83,11 @@ function ClauseCard({ clause, index, isFree, isLocked }) {
         <div className="flex items-center gap-3">
           <RiskBadge level={clause.riskLevel} />
           <h4 className="font-semibold text-gray-800">{clause.title}</h4>
+          {clause.userFocusRelevant && (
+            <span className="text-xs px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 font-medium">
+              Your Focus
+            </span>
+          )}
         </div>
         {isExpanded ? (
           <ChevronUp className="w-4 h-4 text-gray-400" />
@@ -93,6 +98,15 @@ function ClauseCard({ clause, index, isFree, isLocked }) {
 
       {isExpanded && (
         <div className="mt-4 space-y-4">
+          {clause.jurisdictionNote && (
+            <div className="bg-blue-50 border-l-4 border-blue-200 p-3 rounded-r-lg">
+              <p className="text-xs text-blue-500 uppercase tracking-wide mb-1">
+                Jurisdiction Note
+              </p>
+              <p className="text-sm text-blue-700">{clause.jurisdictionNote}</p>
+            </div>
+          )}
+
           {clause.originalText && (
             <div className="bg-gray-50 border-l-4 border-indigo-200 p-3 rounded-r-lg">
               <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">
