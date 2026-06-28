@@ -39,6 +39,8 @@ export async function POST(request) {
     // 2. Parse the uploaded file
     const formData = await request.formData();
     const file = formData.get("file");
+    const country = formData.get("country") || "US";
+    const feedback = formData.get("feedback") || null;
 
     if (!file) {
       return NextResponse.json(
@@ -64,6 +66,14 @@ export async function POST(request) {
       );
     }
 
+    // Validate feedback length
+    if (feedback && feedback.length > 1000) {
+      return NextResponse.json(
+        { error: "Feedback text is too long. Maximum 1000 characters." },
+        { status: 400 }
+      );
+    }
+
     // 3. Extract text from document
     const { text, pageCount } = await parseDocument(file);
 
@@ -77,8 +87,8 @@ export async function POST(request) {
       );
     }
 
-    // 4. Analyze with AI
-    const analysis = await analyzeContract(text);
+    // 4. Analyze with AI (pass country and user feedback for context)
+    const analysis = await analyzeContract(text, { country, feedback });
 
     // 5. Store in Supabase (if available)
     const supabase = getServiceClient();
